@@ -11,34 +11,40 @@
 </head>
 <body>
 
-    <!-- navbar section -->
+    <div class="area"></div><nav class="main-menu">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-database fa-2x"></i>
+                    <span class="nav-text">
+                        Search Data
+                    </span>
+                </a>
+              
+            </li>
+            <li class="has-subnav">
+                <a href="read.html">
+                   <i class="fa fa-folder-open fa-2x"></i>
+                    <span class="nav-text">
+                        Pages
+                    </span>
+                </a>
+               
+            </li>
+        </ul>
 
-    <div class="navbar" id="navbar">
-        <nav class="nav">
-            <div>
-                <div class="nav-brand">
-                    <i name="menu-option" class="fas fa-bars nav-toggle" id="nav-toggle" ></i>
-                    <a href="#" class="nav-logo">AP Visualizer</a>
-                </div>
-                <div class="nav-list">
-                    <a href="index.html" class="nav-link">
-                        <i class="fas fa-home nav-icon"></i>
-                        <span class="nav-name">SEARCH DATA</span>
-                    </a>
-                    <a href="read.html" class="nav-link">
-                        <i class="fas fa-book-reader nav-icon"></i>
-                        <span class="nav-name">READ DATA</span>
-                    </a>
-                    <!-- <a href="#" class="nav-link">
-                        <i class="fas fa-info-circle nav-icon"></i>
-                        <span class="nav-name">ABOUT</span>
-                    </a> -->
-                </div>
-            </div>
-        </nav>
-    </div>
+        <ul class="logout">
+            <li>
+               <a href="#">
+                     <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Logout
+                    </span>
+                </a>
+            </li>  
+        </ul>
+    </nav>
 
-    <script src="../src/navbar.js"></script>
 
 </body>
 </html>
