@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -8,4 +9,6 @@ module.exports = {
     contentBase: path.join(__dirname, 'public'),
     port: 9000,
   },
+
+  plugins: [new Dotenv()],
 };
