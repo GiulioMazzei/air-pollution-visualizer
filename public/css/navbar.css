@@ -50,7 +50,7 @@ nav.main-menu.expanded {
   z-index: 1000;
 }
 ul > *:first-child {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .main-menu > ul {
@@ -72,6 +72,7 @@ ul > *:first-child {
   font-family: arial;
   font-size: 14px;
   text-decoration: none;
+  transform: translateZ(0) scale(1, 1);
   -webkit-transform: translateZ(0) scale(1, 1);
   -webkit-transition: all 0.25s linear;
   transition: all 0.25s linear;
