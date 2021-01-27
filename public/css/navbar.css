@@ -30,7 +30,7 @@
 .main-menu:hover,
 nav.main-menu.expanded {
   width: 255px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .main-menu {
@@ -49,7 +49,7 @@ nav.main-menu.expanded {
   z-index: 1000;
 }
 ul > *:first-child {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .main-menu > ul {
