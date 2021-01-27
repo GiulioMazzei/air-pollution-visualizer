@@ -9,7 +9,40 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .content {
   margin-left: var(--nav-width);
+}
+
+.title {
+  margin-top: 50px;
+  text-align: center;
+}
+.title h1 {
+  color: rgb(114, 114, 114);
+  text-shadow: 2px 4px 4px rgba(230, 230, 230, 0.678);
+}
+
+.search-section {
+  margin-top: 75px;
+}
+.input-for-search-data {
+  width: 40%;
+  padding: 15px 20px;
+  margin-right: 15px;
+  outline: none;
+}
+.button-for-search-data {
+  padding: 15px 18px;
+  margin-left: 15px;
+  cursor: pointer;
+  outline: none;
+  background-color: rgba(57, 78, 107, 0.863);
+  color: #fff;
+  border: none;
 }

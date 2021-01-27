@@ -2,7 +2,7 @@
 
 /* variables */
 :root {
-  --nav-width: 92px;
+  --nav-width: 85px;
   --first-color: rgba(41, 67, 98, 0.76);
   --bg-color: rgb(31, 56, 92);
   --sub-color: rgb(195, 238, 255);
@@ -41,12 +41,15 @@ nav.main-menu.expanded {
   bottom: 0;
   height: 100%;
   left: 0;
-  width: 85px;
+  width: var(--nav-width);
   overflow: hidden;
   -webkit-transition: width 0.2s linear;
   transition: width 0.2s linear;
   -webkit-transform: translateZ(0) scale(1, 1);
   z-index: 1000;
+}
+ul > *:first-child {
+  margin-bottom: 50px;
 }
 
 .main-menu > ul {
@@ -88,7 +91,6 @@ nav.main-menu.expanded {
   display: table-cell;
   vertical-align: middle;
   width: 190px;
-  font-family: 'Titillium Web', sans-serif;
 }
 
 .main-menu > ul.logout {
@@ -138,7 +140,7 @@ nav.main-menu li.active > a,
 }
 .area {
   float: left;
-  background: #e2e2e2;
+  background: #fff;
   width: 100%;
   height: 100%;
 }
