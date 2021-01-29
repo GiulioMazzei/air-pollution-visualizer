@@ -4,6 +4,7 @@ import { showAQIDescription } from './description';
 import { loadCharts } from './charts';
 import { showContent, showAtmosphereContent, showNoData } from './helper';
 import { initMap } from './map';
+import { loadGeolocation } from './geolocation';
 
 console.log('javascript bundle loaded successfully');
 const container = document.querySelector('.content');
@@ -14,6 +15,9 @@ const serviceName = document.querySelector('.service-name');
 
 const inputBox = document.querySelector('.input-for-search-data');
 const btnForFetchingData = document.querySelector('.button-for-search-data');
+const btnForGeolocalization = document.querySelector(
+  '.button-for-geolocalization'
+);
 
 const CO = document.querySelector('.co');
 const H = document.querySelector('.h');
@@ -73,6 +77,8 @@ const fetchData = (value) => {
       else showNoData(atm_Arr, O3);
 
       initMap(json.city.geo[0], json.city.geo[1], json.aqi);
+      console.log('latitude' + json.city.geo[0]);
+      console.log('longitude' + json.city.geo[1]);
     });
 };
 
@@ -83,4 +89,24 @@ btnForFetchingData.addEventListener('click', async () => {
   await fetchData(value);
   console.log(atm_Arr);
   loadCharts(pm10_Day_Arr, pm10_Avg_Arr, pm25_Day_Arr, pm25_Avg_Arr, atm_Arr);
+});
+
+btnForGeolocalization.addEventListener('click', async () => {
+  // IMPORTANT NOTE: not so much city are actually in the database of the AQICN
+  // so if you live in a small city it wont probably be available
+  await navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
+    return axios
+      .get(
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en`
+      )
+      .then((response) => {
+        console.log('city: ' + response.data.city);
+        fetchData(response.data.city);
+      });
+  });
+  setTimeout(() => {
+    loadCharts(pm10_Day_Arr, pm10_Avg_Arr, pm25_Day_Arr, pm25_Avg_Arr, atm_Arr);
+  }, 1000);
 });

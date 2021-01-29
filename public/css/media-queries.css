@@ -1,3 +1,22 @@
+@media only screen and (max-width: 10000px) {
+  .pm10-chart-container,
+  .pm25-chart-container {
+    height: 200px;
+    width: 300px;
+  }
+  .atm-chart-cake {
+    height: 250px;
+    width: 500px;
+  }
+  .atm-chart-bar {
+    height: 270px;
+    width: 520px;
+  }
+  .myChart-3 {
+    margin-right: 50px;
+  }
+}
+
 @media only screen and (max-width: 1450px) {
   .main-menu {
     display: fixed;

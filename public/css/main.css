@@ -1,3 +1,4 @@
+@import url('data-tooltip.css');
 @import url('media-queries.css');
 @import url('navbar.css');
 
@@ -59,7 +60,7 @@ body {
   outline: none;
 }
 .button-for-search-data {
-  padding: 18px 18px;
+  padding: 20px 20px;
   margin-left: 15px;
   cursor: pointer;
   outline: none;
@@ -68,6 +69,19 @@ body {
   border: none;
 }
 .button-for-search-data:hover {
+  background-color: rgba(57, 77, 104, 0.849);
+  box-shadow: 2px 5px 5px rgba(57, 77, 104, 0.26);
+}
+.button-for-geolocalization {
+  padding: 15px 15px;
+  margin-left: 15px;
+  cursor: pointer;
+  outline: none;
+  background-color: rgba(57, 78, 107, 0.863);
+  color: #fff;
+  border: none;
+}
+.button-for-geolocalization:hover {
   background-color: rgba(57, 77, 104, 0.849);
   box-shadow: 2px 5px 5px rgba(57, 77, 104, 0.26);
 }
