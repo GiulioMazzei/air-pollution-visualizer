@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 <body>
     
@@ -79,48 +87,64 @@
                 <h2 class="aqi-description-long">:)</h2>
             </div>
 
-            <div class="box3 card service">
+            <div class="box3 card service m-20">
                 <h1 class="service-title">SERVICE</h1>
                 <h6 class="service-name">Ontario Air Pollution Services</h6>
             </div>
 
-            <div class="box4 card"></div>
-
-            <div class="box5 card chart-box m-15">
-                <h1 class="chart-title">Data for pm10 (week)</h1>
-                <p>-</p>
+            <div class="box4 card m-15">
+                <div id="mapid"></div>
             </div>
 
-            <div class="box6 card chart-box m-15">
-                <h1 class="chart-title">Data for pm25 (week)</h1>
-                <p>-</p>
+            <div class="box5 card chart-box center m-15">
+                <div>
+                    <h1 class="chart-title">Data for pm10 (week)</h1>
+                    <div class="pm10-chart-container">
+                        <canvas id="myChart-1"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box6 card chart-box center m-15">
+                <div>
+                    <h1 class="chart-title">Data for pm25 (week)</h1>
+                    <div class="pm25-chart-container">
+                        <canvas id="myChart-2"></canvas>
+                    </div>
+                </div>
             </div>
 
             <div class="box7 card atmosphere-box m-10">
                 <h1 class="atmosphere-el">CO</h1>
-                <h2 class="atmosphere-res">no data</h2>
+                <h2 class="atmosphere-res co">no data</h2>
             </div>
 
             <div class="box8 card atmosphere-box m-10">
                 <h1 class="atmosphere-el">H</h1>
-                <h2 class="atmosphere-res">no data</h2>
+                <h2 class="atmosphere-res h">no data</h2>
             </div>
 
             <div class="box9 card atmosphere-box m-10">
                 <h1 class="atmosphere-el">NO2</h1>
-                <h2 class="atmosphere-res">no data</h2>
+                <h2 class="atmosphere-res no2">no data</h2>
             </div>
 
             <div class="box10 card atmosphere-box m-10">
                 <h1 class="atmosphere-el">O3</h1>
-                <h2 class="atmosphere-res">no data</h2> 
+                <h2 class="atmosphere-res o3">no data</h2> 
             </div>
 
-            <div class="box11 card charts-atmosphere">
-                <h1 class="charts-atmosphere-title">Atmosphere Composition</h1>
-                <div class="center">
-                    <div>CHART 1</div>
-                    <div>CHART 2</div>
+            <div class="box11 card charts-atmosphere center m-20">
+                <div>
+                    <h1 class="charts-atmosphere-title">Atmosphere Composition</h1>
+                    <div class="atm-chart-container">
+                        <div class="atm-chart-cake">
+                            <canvas id="myChart-3"></canvas>
+                        </div>
+                        <div class="atm-chart-bar">
+                            <canvas id="myChart-4"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -1,0 +1,137 @@
+@media only screen and (max-width: 1450px) {
+  .main-menu {
+    display: fixed;
+  }
+  .container-for-data-result {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* max-width: 950px; */
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+    grid-template-areas:
+      's1 s1 s2 s2'
+      's3 s3 s3 s3'
+      'c1 c1 c2 c2'
+      'c1 c1 c2 c2'
+      'm1 m1 m1 m1'
+      'm1 m1 m1 m1'
+      'm1 m1 m1 m1'
+      'm1 m1 m1 m1'
+      'a1 a2 a3 a4'
+      'ap ap ap ap'
+      'ap ap ap ap'
+      'ap ap ap ap'
+      'ap ap ap ap';
+  }
+  .pm10-chart-container,
+  .pm25-chart-container {
+    width: 300px;
+  }
+  .atm-chart-cake {
+    width: 500px;
+  }
+  .atm-chart-bar {
+    width: 520px;
+  }
+  .myChart-3 {
+    margin-right: 30px;
+  }
+  .myChart-4 {
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .main-menu {
+    display: fixed;
+  }
+  .container-for-data-result {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* max-width: 950px; */
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+    grid-template-areas:
+      's1 s1 s2 s2'
+      's3 s3 s3 s3'
+      'c1 c1 c2 c2'
+      'c1 c1 c2 c2'
+      'm1 m1 m1 m1'
+      'm1 m1 m1 m1'
+      'm1 m1 m1 m1'
+      'm1 m1 m1 m1'
+      'a1 a2 a3 a4'
+      'ap ap ap ap'
+      'ap ap ap ap'
+      'ap ap ap ap'
+      'ap ap ap ap';
+  }
+  .pm10-chart-container,
+  .pm25-chart-container {
+    width: 250px;
+  }
+  .atm-chart-cake {
+    width: 300px;
+  }
+  .atm-chart-bar {
+    width: 320px;
+  }
+  .myChart-3 {
+    margin-right: 25px;
+  }
+  .myChart-4 {
+    margin-left: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-menu {
+    display: none;
+  }
+  .container-for-data-result {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* max-width: 950px; */
+    grid-gap: 10px;
+    grid-template-areas:
+      's1 s1'
+      's2 s2'
+      's3 s3'
+      'c1 c1'
+      'c1 c1'
+      'c2 c2'
+      'c2 c2'
+      'm1 m1'
+      'm1 m1'
+      'm1 m1'
+      'a1 a2'
+      'a3 a4'
+      'ap ap'
+      'ap ap'
+      'ap ap'
+      'ap ap';
+  }
+  .pm10-chart-container,
+  .pm25-chart-container {
+    width: 250px;
+  }
+  .atm-chart-container {
+    display: block;
+  }
+  .atm-chart-cake {
+    width: 250px;
+  }
+  .atm-chart-bar {
+    margin-top: 25px;
+    width: 270px;
+  }
+  .myChart-3 {
+    margin-right: 15px;
+  }
+  .myChart-4 {
+    margin-left: 15px;
+  }
+}

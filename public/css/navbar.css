@@ -1,10 +1,8 @@
-/* style for navbar */
-
-/* variables */
-:root {
+@import url('media-queries.css'); /* style for navbar */ /* variables */
+:root  {
   --nav-width: 85px;
-  --first-color: rgba(41, 67, 98, 0.76);
-  --bg-color: rgb(31, 56, 92);
+  --first-color: rgba(88, 105, 128, 0.863);
+  --bg-color: rgba(57, 78, 107);
   --sub-color: rgb(195, 238, 255);
 
   --body-font: 'Arial', sans-serif;
