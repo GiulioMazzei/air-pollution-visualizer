@@ -6,10 +6,9 @@ import { showContent, showAtmosphereContent, showNoData } from './helper';
 import { initMap } from './map';
 
 console.log('javascript bundle loaded successfully');
-
+const container = document.querySelector('.content');
 const aqiNumber = document.querySelector('.aqi-number');
 const aqiDescriptionKey = document.querySelector('.aqi-description-key');
-const aqiDescriptionLong = document.querySelector('.aqi-description-long');
 
 const serviceName = document.querySelector('.service-name');
 
@@ -81,7 +80,6 @@ const fetchData = (value) => {
 
 btnForFetchingData.addEventListener('click', async () => {
   let value = inputBox.value;
-
   await fetchData(value);
   console.log(atm_Arr);
   loadCharts(pm10_Day_Arr, pm10_Avg_Arr, pm25_Day_Arr, pm25_Avg_Arr, atm_Arr);

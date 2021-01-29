@@ -3,6 +3,15 @@
 export const loadCharts = (...params) => {
   Chart.defaults.global.defaultFontFamily = 'Arial';
 
+  // remove the chart if it's already exists
+  if (document.getElementById('myChart-1'))
+    document.getElementById('myChart-1').remove();
+
+  // create the new chart
+  let chart1 = document.createElement('canvas');
+  chart1.setAttribute('id', 'myChart-1');
+  document.querySelector('.pm10-chart-container').appendChild(chart1);
+
   let pm10Chart = document.getElementById('myChart-1').getContext('2d');
   let chartPM10 = new Chart(pm10Chart, {
     responsive: true,
@@ -37,6 +46,15 @@ export const loadCharts = (...params) => {
       },
     },
   });
+
+  // remove the chart if it's already exists
+  if (document.getElementById('myChart-2'))
+    document.getElementById('myChart-2').remove();
+
+  // create the new chart
+  let chart2 = document.createElement('canvas');
+  chart2.setAttribute('id', 'myChart-2');
+  document.querySelector('.pm25-chart-container').appendChild(chart2);
 
   let pm25Chart = document.getElementById('myChart-2').getContext('2d');
   let chartPM25 = new Chart(pm25Chart, {

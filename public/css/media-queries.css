@@ -26,19 +26,32 @@
   }
   .pm10-chart-container,
   .pm25-chart-container {
+    height: 200px;
     width: 300px;
   }
   .atm-chart-cake {
+    height: 250px;
     width: 500px;
   }
   .atm-chart-bar {
+    height: 250px;
     width: 520px;
   }
   .myChart-3 {
-    margin-right: 30px;
+    margin-right: 50px;
   }
   .myChart-4 {
-    margin-left: 30px;
+    margin-left: 50px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .atm-chart-cake {
+    height: 200px;
+    width: 400px;
+  }
+  .atm-chart-bar {
+    height: 200px;
+    width: 420px;
   }
 }
 
@@ -90,11 +103,14 @@
   .main-menu {
     display: none;
   }
+  .content {
+    margin-left: 0;
+  }
   .container-for-data-result {
     margin-top: 100px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* max-width: 950px; */
+    grid-auto-rows: minmax(100px, auto);
     grid-gap: 10px;
     grid-template-areas:
       's1 s1'
@@ -122,11 +138,11 @@
     display: block;
   }
   .atm-chart-cake {
-    width: 250px;
+    width: 350px;
   }
   .atm-chart-bar {
     margin-top: 25px;
-    width: 270px;
+    width: 350px;
   }
   .myChart-3 {
     margin-right: 15px;
