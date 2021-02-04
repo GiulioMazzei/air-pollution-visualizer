@@ -91,6 +91,22 @@ export const loadCharts = (...params) => {
     },
   });
 
+  // remove the chart if it's already exists
+  if (document.getElementById('myChart-3'))
+    document.getElementById('myChart-3').remove();
+
+  if (document.getElementById('myChart-4'))
+    document.getElementById('myChart-4').remove();
+
+  // create the new chart
+  let chart3 = document.createElement('canvas');
+  chart3.setAttribute('id', 'myChart-3');
+  document.querySelector('.atm-chart-cake').appendChild(chart3);
+
+  let chart4 = document.createElement('canvas');
+  chart4.setAttribute('id', 'myChart-4');
+  document.querySelector('.atm-chart-bar').appendChild(chart4);
+
   let cakeChart = document.getElementById('myChart-3').getContext('2d');
   let cakeATM = new Chart(cakeChart, {
     responsive: true,

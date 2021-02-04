@@ -15,12 +15,9 @@
     height: 270px;
     width: 520px;
   }
-  .myChart-3 {
-    margin-right: 50px;
-  }
 }
 
-@media only screen and (max-width: 1450px) {
+@media only screen and (max-width: 1550px) {
   .main-menu {
     display: fixed;
   }
@@ -52,18 +49,14 @@
     width: 300px;
   }
   .atm-chart-cake {
+    margin-right: 50px;
     height: 250px;
     width: 500px;
   }
   .atm-chart-bar {
+    margin-left: 50px;
     height: 250px;
     width: 520px;
-  }
-  .myChart-3 {
-    margin-right: 50px;
-  }
-  .myChart-4 {
-    margin-left: 50px;
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -77,7 +70,7 @@
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
   .main-menu {
     display: fixed;
   }
@@ -121,7 +114,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .main-menu {
     display: none;
   }
@@ -169,16 +162,95 @@
     display: block;
   }
   .atm-chart-cake {
+    margin-right: 0px;
     width: 350px;
   }
   .atm-chart-bar {
-    margin-top: 25px;
+    margin-left: 0px;
     width: 350px;
   }
-  .myChart-3 {
-    margin-right: 15px;
+}
+
+@media screen and (max-width: 550px) {
+  .main-menu {
+    display: none;
   }
-  .myChart-4 {
-    margin-left: 15px;
+  .mobile-navbar {
+    display: block;
+  }
+  .content {
+    margin-left: 0;
+  }
+  h1 a {
+    font-size: 12px;
+  }
+  .title {
+    font-size: 12px;
+  }
+  .input-for-search-data {
+    width: 80%;
+  }
+  .button-for-search-data {
+    display: inline;
+  }
+  .c-b-mq {
+    text-align: center;
+    display: block;
+    /* display: block; */
+  }
+  .b-s-and-geo {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .main-menu {
+    display: none;
+  }
+  .mobile-navbar {
+    display: block;
+  }
+  .content {
+    margin-left: 0;
+  }
+  h1 {
+    text-align: center;
+  }
+  h1 a {
+    font-size: 12px;
+  }
+  .title {
+    font-size: 12px;
+  }
+  .input-for-search-data {
+    width: 80%;
+  }
+  .button-for-search-data {
+    display: inline;
+  }
+  .c-b-mq {
+    text-align: center;
+    display: block;
+    /* display: block; */
+  }
+  .b-s-and-geo {
+    margin-top: 25px;
+  }
+
+  .pm10-chart-container,
+  .pm25-chart-container {
+    height: 170px;
+    width: 250px;
+  }
+  .atm-chart-container {
+    display: block;
+  }
+  .atm-chart-cake {
+    margin-right: 0px;
+    width: 300px;
+  }
+  .atm-chart-bar {
+    margin-left: 0px;
+    width: 300px;
   }
 }
