@@ -29,4 +29,9 @@ export const initMap = (lat, lon, aqi) => {
     fillOpacity: 0.5,
     radius: 300,
   }).addTo(mymap);
+
+  // this function fixes a bug that block the map loading
+  setTimeout(function () {
+    mymap.invalidateSize();
+  }, 100);
 };

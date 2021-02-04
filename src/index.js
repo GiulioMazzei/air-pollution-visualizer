@@ -4,10 +4,11 @@ import { showAQIDescription } from './description';
 import { loadCharts } from './charts';
 import { showContent, showAtmosphereContent, showNoData } from './helper';
 import { initMap } from './map';
-import { loadGeolocation } from './geolocation';
 
 console.log('javascript bundle loaded successfully');
-const container = document.querySelector('.content');
+
+const container = document.querySelector('.wrapper-for-data');
+const errorMessageContainer = document.querySelector('.error-message');
 const aqiNumber = document.querySelector('.aqi-number');
 const aqiDescriptionKey = document.querySelector('.aqi-description-key');
 
@@ -30,15 +31,24 @@ let pm25_Day_Arr = [];
 let pm25_Avg_Arr = [];
 let atm_Arr = [];
 
+let errorAPI = false;
 // fetch data
 
-const fetchData = (value) => {
+const fetchData = async (value) => {
   return axios
     .get(`https://api.waqi.info/feed/${value}/?token=${process.env.API_KEY}`)
     .then((response) => {
+      errorAPI = false;
+      showContent(errorMessageContainer, 'none');
       console.log(response.data);
 
       let json = response.data.data;
+      // Unknown station
+      if (json === 'Unknown station') {
+        showContent(container, 'none');
+        errorAPI = true;
+        return;
+      }
 
       // changing the HTML
       aqiNumber.textContent = json.aqi;
@@ -87,14 +97,18 @@ const fetchData = (value) => {
 btnForFetchingData.addEventListener('click', async () => {
   let value = inputBox.value;
   await fetchData(value);
-  console.log(atm_Arr);
-  loadCharts(pm10_Day_Arr, pm10_Avg_Arr, pm25_Day_Arr, pm25_Avg_Arr, atm_Arr);
+  console.log('loaded content');
+  if (errorAPI) showContent(errorMessageContainer, 'block');
+  else {
+    loadCharts(pm10_Day_Arr, pm10_Avg_Arr, pm25_Day_Arr, pm25_Avg_Arr, atm_Arr);
+    showContent(container, 'block');
+  }
 });
 
 btnForGeolocalization.addEventListener('click', async () => {
   // IMPORTANT NOTE: not so much city are actually in the database of the AQICN
   // so if you live in a small city it wont probably be available
-  await navigator.geolocation.getCurrentPosition((position) => {
+  navigator.geolocation.getCurrentPosition((position) => {
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
     return axios
@@ -104,9 +118,15 @@ btnForGeolocalization.addEventListener('click', async () => {
       .then((response) => {
         console.log('city: ' + response.data.city);
         fetchData(response.data.city);
+      })
+      .then(() => {
+        loadCharts(
+          pm10_Day_Arr,
+          pm10_Avg_Arr,
+          pm25_Day_Arr,
+          pm25_Avg_Arr,
+          atm_Arr
+        );
       });
   });
-  setTimeout(() => {
-    loadCharts(pm10_Day_Arr, pm10_Avg_Arr, pm25_Day_Arr, pm25_Avg_Arr, atm_Arr);
-  }, 1000);
 });

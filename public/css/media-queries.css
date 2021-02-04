@@ -1,3 +1,6 @@
+@import url('navbar.css');
+@import url('mobile-navbar.css');
+
 @media only screen and (max-width: 10000px) {
   .pm10-chart-container,
   .pm25-chart-container {
@@ -122,8 +125,17 @@
   .main-menu {
     display: none;
   }
+  .mobile-navbar {
+    display: block;
+  }
   .content {
     margin-left: 0;
+  }
+  .title {
+    font-size: 12px;
+  }
+  .input-for-search-data {
+    width: 40%;
   }
   .container-for-data-result {
     margin-top: 100px;

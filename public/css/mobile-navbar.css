@@ -1,0 +1,35 @@
+@import url('media-queries.css');
+
+.mobile-navbar {
+  height: 75px;
+  display: none;
+  background-color: var(--bg-color);
+}
+.nav-title {
+  font-size: 18px;
+}
+.mobile-navbar a {
+  text-decoration: none;
+  color: #fff;
+}
+.mobile-navbar h1 {
+  padding: 10px 15px;
+  font-size: 15px;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: #fff;
+}
+.mobile-navbar h1:hover {
+  background-color: var(--first-color);
+}
+.nav-c {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-navbar-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
