@@ -258,3 +258,84 @@ body {
   margin-top: 50px;
   width: 500px;
 }
+
+/* read data page*/
+
+::selection {
+  background: rgba(60, 160, 241, 0.6);
+}
+.table-wrapper {
+  overflow-x: auto;
+}
+.read-title {
+  margin-top: 75px;
+  text-align: center;
+  color: grey;
+}
+.read-table {
+  margin-top: 75px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.read-table table {
+  width: 100%;
+  box-shadow: 2px 8px 8px rgb(211, 210, 210);
+}
+
+.read-table-title {
+  color: grey;
+  margin-bottom: 15px;
+}
+.read-table p {
+  margin-bottom: 40px;
+}
+
+.read-table table,
+.read-table th,
+.read-table td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+.read-table th,
+.read-table td {
+  padding: 10px;
+}
+.read-table th {
+  height: 10vh;
+}
+.read-table td {
+  height: 8vh;
+}
+.read-table thead tr:nth-child(1) {
+  background-color: #fff;
+}
+.read-table tbody tr:nth-child(1) {
+  background-color: rgba(57, 78, 107, 0.5);
+  color: rgb(240, 240, 240, 0.7);
+}
+.read-table tbody tr:nth-child(2) {
+  background-color: rgba(57, 78, 107, 0.6);
+  color: rgb(240, 240, 240, 0.7);
+}
+.read-table tbody tr:nth-child(3) {
+  background-color: rgba(57, 78, 107, 0.7);
+  color: rgb(240, 240, 240, 0.8);
+}
+.read-table tbody tr:nth-child(4) {
+  background-color: rgba(57, 78, 107, 0.8);
+  color: rgb(240, 240, 240, 0.8);
+}
+.read-table tbody tr:nth-child(5) {
+  background-color: rgba(57, 78, 107, 0.9);
+  color: rgb(240, 240, 240, 0.9);
+}
+.read-table tbody tr:nth-child(6) {
+  background-color: rgba(57, 78, 107);
+  color: rgb(240, 240, 240);
+}
+
+.read-table-descritption-title {
+  color: grey;
+  margin-top: 60px;
+  margin-bottom: 15px;
+}
