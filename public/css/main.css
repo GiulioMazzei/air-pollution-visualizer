@@ -1,6 +1,7 @@
 @import url('data-tooltip.css');
 @import url('media-queries.css');
 @import url('navbar.css');
+@import url('animation.css');
 
 * {
   box-sizing: border-box;
@@ -20,7 +21,8 @@ body {
 }
 .card {
   border: 0.2px solid rgba(231, 231, 231, 0.5);
-  box-shadow: 2px 4px 4px rgba(208, 208, 208, 0.822);
+  -webkit-box-shadow: 2px 6px 6px rgb(211, 210, 210, 0.6);
+  box-shadow: 2px 6px 6px rgb(211, 210, 210, 0.6);
 }
 .m-10 {
   padding: 10px;
@@ -50,6 +52,12 @@ body {
 .title {
   margin-top: 50px;
   text-align: center;
+  -webkit-animation-name: drop-animation;
+  animation-name: drop-animation;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
 }
 .title h1 {
   color: rgb(114, 114, 114);
@@ -59,6 +67,12 @@ body {
 /* search section */
 .search-section {
   margin-top: 75px;
+  -webkit-animation-name: drop-animation;
+  animation-name: drop-animation;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
 }
 .input-for-search-data {
   width: 40%;
@@ -77,6 +91,7 @@ body {
 }
 .button-for-search-data:hover {
   background-color: rgba(57, 77, 104, 0.849);
+  -webkit-box-shadow: 2px 5px 5px rgba(57, 77, 104, 0.26);
   box-shadow: 2px 5px 5px rgba(57, 77, 104, 0.26);
 }
 .button-for-geolocalization {
@@ -90,6 +105,7 @@ body {
 }
 .button-for-geolocalization:hover {
   background-color: rgba(57, 77, 104, 0.849);
+  -webkit-box-shadow: 2px 5px 5px rgba(57, 77, 104, 0.26);
   box-shadow: 2px 5px 5px rgba(57, 77, 104, 0.26);
 }
 
@@ -101,7 +117,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   /* max-width: 950px; */
-  grid-gap: 10px;
+  grid-gap: 20px;
   grid-template-areas:
     's1 s2 s3 s3 s3'
     'c1 c1 m1 m1 m1'
@@ -147,6 +163,32 @@ body {
 }
 .box11 {
   grid-area: ap;
+}
+
+.box3,
+.box4,
+.box11 {
+  -webkit-animation-name: right-animation;
+  animation-name: right-animation;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+.box1,
+.box2,
+.box5,
+.box6,
+.box7,
+.box8,
+.box9,
+.box10 {
+  -webkit-animation-name: left-animation;
+  animation-name: left-animation;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
 }
 
 /* aqi box*/
@@ -279,6 +321,7 @@ body {
 }
 .read-table table {
   width: 100%;
+  -webkit-box-shadow: 2px 8px 8px rgb(211, 210, 210);
   box-shadow: 2px 8px 8px rgb(211, 210, 210);
 }
 
