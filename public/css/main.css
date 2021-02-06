@@ -227,6 +227,7 @@ body {
 .aqi-description-long {
   margin-top: 20px;
   font-weight: normal;
+  font-size: 15px;
 }
 
 /* service box */
