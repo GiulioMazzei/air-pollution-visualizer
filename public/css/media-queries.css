@@ -118,7 +118,7 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 880px) {
   .main-menu {
     display: none;
   }
@@ -163,16 +163,16 @@
     width: 250px;
   }
   .atm-chart-container {
-    margin-top: 40px;
+    margin-top: 60px;
     display: block;
   }
   .atm-chart-cake {
     margin-right: 0px;
-    width: 350px;
+    width: 400px;
   }
   .atm-chart-bar {
     margin-left: 0px;
-    width: 350px;
+    width: 400px;
   }
   .read-table-title {
     font-size: 25px;
@@ -205,7 +205,6 @@
   .c-b-mq {
     text-align: center;
     display: block;
-    /* display: block; */
   }
   .b-s-and-geo {
     margin-top: 25px;
@@ -236,8 +235,6 @@
     font-size: 12px;
   }
   .input-for-search-data {
-    /* margin-right: 20px;
-    margin-left: 20px; */
     width: 80%;
     margin-right: 0px;
   }
@@ -251,6 +248,10 @@
   }
   .b-s-and-geo {
     margin-top: 25px;
+  }
+  .read-table {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .pm10-chart-container,

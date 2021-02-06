@@ -30,7 +30,7 @@ export const initMap = (lat, lon, aqi) => {
     radius: 300,
   }).addTo(mymap);
 
-  // this function fixes a bug that block the map loading
+  // this function fixes a bug that was blocking the map loading
   setTimeout(function () {
     mymap.invalidateSize();
   }, 100);

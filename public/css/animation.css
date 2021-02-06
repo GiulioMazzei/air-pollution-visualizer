@@ -1,3 +1,4 @@
+/* animation from top to bottom */
 @keyframes drop-animation {
   from {
     transform: translateY(-100px);
@@ -9,6 +10,7 @@
   }
 }
 
+/* animation left top to right */
 @keyframes left-animation {
   from {
     transform: translateX(-100px);
@@ -20,6 +22,7 @@
   }
 }
 
+/* animation from right to left */
 @keyframes right-animation {
   from {
     transform: translateX(100px);
@@ -31,6 +34,7 @@
   }
 }
 
+/* animation for make a floating element */
 @keyframes float-animation {
   0% {
     transform: translatey(0px);

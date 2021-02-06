@@ -91,14 +91,14 @@ export const loadCharts = (...params) => {
     },
   });
 
-  // remove the chart if it's already exists
+  // remove the charts if they already exists
   if (document.getElementById('myChart-3'))
     document.getElementById('myChart-3').remove();
 
   if (document.getElementById('myChart-4'))
     document.getElementById('myChart-4').remove();
 
-  // create the new chart
+  // create the new charts
   let chart3 = document.createElement('canvas');
   chart3.setAttribute('id', 'myChart-3');
   document.querySelector('.atm-chart-cake').appendChild(chart3);

@@ -1,4 +1,6 @@
-@import url('media-queries.css'); /* style for navbar */ /* variables */
+/* style for navbar */ /* variables */
+
+@import url('media-queries.css');
 :root {
   --nav-width: 84px;
   --first-color: rgba(88, 105, 128, 0.863);

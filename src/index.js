@@ -2,13 +2,13 @@ import axios from 'axios';
 
 import { showAQIDescription } from './description';
 import { loadCharts } from './charts';
+import { initMap } from './map';
 import {
   showContent,
   showAtmosphereContent,
   showNoData,
   showErrorMessage,
 } from './helper';
-import { initMap } from './map';
 
 console.log('javascript bundle loaded successfully');
 
@@ -39,7 +39,7 @@ let pm25_Avg_Arr = [];
 let atm_Arr = [];
 
 let errorAPI = false;
-let errorGEO = false;
+
 // fetch data
 
 footer.classList.add('fixed-down');
@@ -53,8 +53,8 @@ const fetchData = async (value) => {
       console.log(response.data);
 
       let json = response.data.data;
+
       // Unknown station
-      // showErrorMessage(json, container, errorAPI);
       if (json === 'Unknown station') {
         showContent(container, 'none');
         errorAPI = true;
@@ -98,24 +98,25 @@ const fetchData = async (value) => {
       else showNoData(atm_Arr, O3);
 
       initMap(json.city.geo[0], json.city.geo[1], json.aqi);
-      console.log('latitude' + json.city.geo[0]);
-      console.log('longitude' + json.city.geo[1]);
     });
 };
 
-// adding the button functionalities
+// BUTTONS
+
+//button for searching data about the relative city
 
 btnForFetchingData.addEventListener('click', async () => {
   let value = inputBox.value;
   await fetchData(value);
   footer.classList.remove('fixed-down');
-  console.log('loaded content');
   if (errorAPI) showContent(errorMessageContainer, 'block');
   else {
     loadCharts(pm10_Day_Arr, pm10_Avg_Arr, pm25_Day_Arr, pm25_Avg_Arr, atm_Arr);
     showContent(container, 'block');
   }
 });
+
+//button for the Geolocalization
 
 btnForGeolocalization.addEventListener('click', async () => {
   // IMPORTANT NOTE: not so much city are actually in the database of the AQICN

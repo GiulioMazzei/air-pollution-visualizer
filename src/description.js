@@ -1,4 +1,4 @@
-// function for dedice the description key
+// function for decide the description key
 
 export const showAQIDescription = (aqi, dk) => {
   if (aqi < 50 && aqi > 0) dk.textContent = 'GOOD';
