@@ -38,11 +38,19 @@ body {
 }
 .content {
   margin-left: var(--nav-width);
-  margin-bottom: 100px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .error-message {
   margin-top: 100px;
   display: none;
+}
+.error-image {
+  animation-name: float-animation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 .wrapper-for-data {
   display: none;
@@ -79,6 +87,9 @@ body {
   padding: 18px 20px;
   margin-right: 15px;
   outline: none;
+  border: 0.2px solid rgba(209, 209, 209, 0.719);
+  -webkit-box-shadow: 2px 5px 5px rgb(211, 210, 210, 0.6);
+  box-shadow: 2px 5px 5px rgb(211, 210, 210, 0.6);
 }
 .button-for-search-data {
   padding: 20px 20px;
@@ -128,6 +139,7 @@ body {
     'a2 ap ap ap ap'
     'a3 ap ap ap ap'
     'a4 ap ap ap ap';
+  flex-grow: 1;
 }
 
 /* grid settings */
@@ -381,4 +393,51 @@ body {
   color: grey;
   margin-top: 60px;
   margin-bottom: 15px;
+}
+
+/* footer */
+footer {
+  margin-top: 75px;
+  flex-shrink: 0;
+  background-color: rgb(35, 47, 62);
+}
+
+footer h3 {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+footer p {
+  color: #fff;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.footer-container {
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+footer span a {
+  color: rgba(165, 178, 197, 0.863);
+  text-decoration: none;
+}
+.footer-links {
+  width: 100%;
+  height: 75px;
+  background-color: #131a22;
+}
+footer i {
+  color: #fff;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+footer i:hover {
+  transform: scale(1.05);
+}
+.fixed-down {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(35, 47, 62);
 }

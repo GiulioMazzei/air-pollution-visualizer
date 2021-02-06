@@ -2,7 +2,12 @@ import axios from 'axios';
 
 import { showAQIDescription } from './description';
 import { loadCharts } from './charts';
-import { showContent, showAtmosphereContent, showNoData } from './helper';
+import {
+  showContent,
+  showAtmosphereContent,
+  showNoData,
+  showErrorMessage,
+} from './helper';
 import { initMap } from './map';
 
 console.log('javascript bundle loaded successfully');
@@ -25,6 +30,8 @@ const H = document.querySelector('.h');
 const NO2 = document.querySelector('.no2');
 const O3 = document.querySelector('.o3');
 
+const footer = document.querySelector('footer');
+
 let pm10_Day_Arr = [];
 let pm10_Avg_Arr = [];
 let pm25_Day_Arr = [];
@@ -32,7 +39,10 @@ let pm25_Avg_Arr = [];
 let atm_Arr = [];
 
 let errorAPI = false;
+let errorGEO = false;
 // fetch data
+
+footer.classList.add('fixed-down');
 
 const fetchData = async (value) => {
   return axios
@@ -44,6 +54,7 @@ const fetchData = async (value) => {
 
       let json = response.data.data;
       // Unknown station
+      // showErrorMessage(json, container, errorAPI);
       if (json === 'Unknown station') {
         showContent(container, 'none');
         errorAPI = true;
@@ -97,6 +108,7 @@ const fetchData = async (value) => {
 btnForFetchingData.addEventListener('click', async () => {
   let value = inputBox.value;
   await fetchData(value);
+  footer.classList.remove('fixed-down');
   console.log('loaded content');
   if (errorAPI) showContent(errorMessageContainer, 'block');
   else {
@@ -115,18 +127,24 @@ btnForGeolocalization.addEventListener('click', async () => {
       .get(
         `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en`
       )
-      .then((response) => {
+      .then(async (response) => {
         console.log('city: ' + response.data.city);
-        fetchData(response.data.city);
-      })
-      .then(() => {
-        loadCharts(
-          pm10_Day_Arr,
-          pm10_Avg_Arr,
-          pm25_Day_Arr,
-          pm25_Avg_Arr,
-          atm_Arr
-        );
+        await fetchData(response.data.city);
+        inputBox.value = '';
+        footer.classList.remove('fixed-down');
+
+        // Unknown Station
+        if (errorAPI) showContent(errorMessageContainer, 'block');
+        else {
+          loadCharts(
+            pm10_Day_Arr,
+            pm10_Avg_Arr,
+            pm25_Day_Arr,
+            pm25_Avg_Arr,
+            atm_Arr
+          );
+          showContent(container, 'block');
+        }
       });
   });
 });

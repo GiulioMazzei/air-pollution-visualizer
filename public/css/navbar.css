@@ -1,8 +1,8 @@
 @import url('media-queries.css'); /* style for navbar */ /* variables */
 :root {
-  --nav-width: 85px;
+  --nav-width: 84px;
   --first-color: rgba(88, 105, 128, 0.863);
-  --bg-color: rgba(57, 78, 107);
+  --bg-color: rgb(44, 61, 85);
   --sub-color: rgb(195, 238, 255);
 
   --body-font: 'Arial', sans-serif;
@@ -33,7 +33,7 @@ nav.main-menu.expanded {
 
 .main-menu {
   background-color: var(--bg-color);
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid #2b3247;
   position: fixed;
   top: 0;
   bottom: 0;

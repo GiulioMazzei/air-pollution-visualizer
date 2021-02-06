@@ -8,6 +8,7 @@
     opacity: 1;
   }
 }
+
 @keyframes left-animation {
   from {
     transform: translateX(-100px);
@@ -27,5 +28,17 @@
   to {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+
+@keyframes float-animation {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-30px);
+  }
+  100% {
+    transform: translatey(0px);
   }
 }
