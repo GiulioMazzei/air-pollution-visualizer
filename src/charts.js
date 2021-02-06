@@ -156,7 +156,7 @@ export const loadCharts = (...params) => {
       labels: ['CO', 'H', 'NO2', 'O3'],
       datasets: [
         {
-          label: 'composition of atmosphere',
+          label: '% of the element',
           backgroundColor: [
             'rgba(107, 142, 183, 0.650)',
             'rgba(188, 211, 231, 0.650)',
