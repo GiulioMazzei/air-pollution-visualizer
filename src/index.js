@@ -1,4 +1,5 @@
 import axios from 'axios';
+import _ from 'lodash';
 
 import { showAQIDescription } from './description';
 import { loadCharts } from './charts';
@@ -73,16 +74,19 @@ const fetchData = async (value) => {
       if (pm25_Avg_Arr.length !== 0) pm25_Avg_Arr.length = 0;
       if (atm_Arr.length !== 0) atm_Arr.length = 0;
 
-      //pm10
-      for (let i = 0; i < json.forecast.daily.pm10.length; i++) {
-        pm10_Day_Arr.push(json.forecast.daily.pm10[i].day);
-        pm10_Avg_Arr.push(json.forecast.daily.pm10[i].avg);
-      }
-
-      //pm25
-      for (let i = 0; i < json.forecast.daily.pm25.length; i++) {
-        pm25_Day_Arr.push(json.forecast.daily.pm25[i].day);
-        pm25_Avg_Arr.push(json.forecast.daily.pm25[i].avg);
+      // forecast section
+      let forecast = json.forecast;
+      if (forecast.daily.pm10 && forecast.daily.pm25) {
+        //pm10
+        for (let i = 0; i < forecast.daily.pm10.length; i++) {
+          pm10_Day_Arr.push(forecast.daily.pm10[i].day);
+          pm10_Avg_Arr.push(forecast.daily.pm10[i].avg);
+        }
+        //pm25
+        for (let i = 0; i < forecast.daily.pm25.length; i++) {
+          pm25_Day_Arr.push(forecast.daily.pm25[i].day);
+          pm25_Avg_Arr.push(forecast.daily.pm25[i].avg);
+        }
       }
 
       if (json.iaqi.co) showAtmosphereContent(atm_Arr, CO, json.iaqi.co.v);
